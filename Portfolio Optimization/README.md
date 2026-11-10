@@ -1,4 +1,4 @@
-# Portfolio Management and Optimization (India)
+# Portfolio Management and Optimization
 
 A study of modern portfolio theory on Indian equities, built one stage at a time and ending in an
 interactive portfolio builder. This is an educational and research project, not investment advice.
