@@ -1,2 +1,1 @@
-# Fintech
-All my learning and ideas in Finance applied and practically learned
+Applying some Finance concepts with real Data
