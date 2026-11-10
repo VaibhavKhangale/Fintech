@@ -1,0 +1,8 @@
+# Splits and consolidations missing from NSE's action list, found from price gaps at the open.
+# A factor below 1 is a split; above 1 is a consolidation.
+splits:
+  - {symbol: NIFTYBEES, date: "2019-12-19", factor: 0.1}
+  - {symbol: GOLDBEES, date: "2019-12-19", factor: 0.01}
+  - {symbol: BANKBEES, date: "2019-12-19", factor: 0.1}
+  - {symbol: PHILIPCARB, date: "2018-04-19", factor: 0.2}
+  - {symbol: CCAVENUE, date: "2026-10-19", factor: 10.0}

@@ -1,0 +1,17 @@
+numpy
+pandas
+scipy
+matplotlib
+cvxpy
+yfinance
+statsmodels
+scikit-learn
+pyarrow
+requests
+pyyaml
+
+[dev]
+pytest
+ruff
+jupyter
+nbconvert

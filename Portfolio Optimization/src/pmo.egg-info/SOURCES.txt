@@ -1,0 +1,6 @@
+pyproject.toml
+src/pmo.egg-info/PKG-INFO
+src/pmo.egg-info/SOURCES.txt
+src/pmo.egg-info/dependency_links.txt
+src/pmo.egg-info/requires.txt
+src/pmo.egg-info/top_level.txt

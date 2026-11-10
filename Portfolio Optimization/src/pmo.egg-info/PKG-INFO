@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: pmo
+Version: 0.1.0
+Summary: Portfolio management and optimization for the Indian equity market
+Requires-Python: >=3.12
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: cvxpy
+Requires-Dist: yfinance
+Requires-Dist: statsmodels
+Requires-Dist: scikit-learn
+Requires-Dist: pyarrow
+Requires-Dist: requests
+Requires-Dist: pyyaml
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: jupyter; extra == "dev"
+Requires-Dist: nbconvert; extra == "dev"

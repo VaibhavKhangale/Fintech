@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pmo"
+version = "0.1.0"
+description = "Portfolio management and optimization for the Indian equity market"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy", "pandas", "scipy", "matplotlib", "cvxpy", "yfinance",
+    "statsmodels", "scikit-learn", "pyarrow", "requests", "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "jupyter", "nbconvert"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100

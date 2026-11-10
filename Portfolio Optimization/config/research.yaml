@@ -1,0 +1,14 @@
+# Date splits for the stock-selection research. See reports/research_protocol.md.
+
+splits:
+  development:
+    start: "2011-01-01"
+    end: "2021-12-31"
+  validation:
+    start: "2022-01-01"
+    end: "2023-10-31"
+    protected: true        # opened once per candidate, after approval
+  seen_period:
+    start: "2023-11-01"
+    end: "2026-10-31"
+    protected: true        # already inspected in Stage 10, so a labeled second check only

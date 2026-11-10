@@ -1,0 +1,49 @@
+# Single source of truth for the study. Change the universe or dates here, not in code.
+
+window:
+  start: "2011-01-01"        # first day of price history
+  holdout_months: 36         # most recent complete months, kept out of optimization until Stage 10
+
+benchmark:
+  market_proxy: NIFTYBEES    # total-return proxy; ^NSEI excludes dividends
+  price_index: "^NSEI"
+
+universe:                    # NIFTY 50 members listed before the study window, grouped by sector
+  Financial Services: [HDFCBANK, ICICIBANK, SBIN, KOTAKBANK, BAJFINANCE]
+  Information Technology: [TCS, INFY, HCLTECH]
+  FMCG: [HINDUNILVR, ITC, NESTLEIND]
+  Automobile: [MARUTI, M&M, BAJAJ-AUTO]
+  Healthcare: [SUNPHARMA, DRREDDY]
+  Energy: [RELIANCE, ONGC]
+  Metals: [TATASTEEL]
+  Power: [NTPC]
+  Telecom: [BHARTIARTL]
+  Construction: [LT]
+  Cement: [ULTRACEMCO]
+  Consumer: [ASIANPAINT, TITAN]
+
+# Demergers Yahoo left unadjusted: the ex-date return is reset to the market's.
+corporate_actions:
+  - {symbol: ITC, ex_date: "2025-01-06", event: "ITC Hotels demerger"}
+  - {symbol: HINDUNILVR, ex_date: "2025-12-05", event: "Kwality Wall's demerger"}
+
+investor:
+  survivorship_haircut: 0.03   # half of the 6.3-point tracker gap in Stage 5, since the blend is half history
+  stress_loss: 0.60            # Nifty 50 peak-to-trough fall in 2008, from daily ^NSEI closes
+
+asset_classes:
+  gold_etf: GOLDBEES
+  bond_scheme: 101002        # SBI 10 Year Constant Maturity Gilt Fund, Regular Plan, Growth
+  liquid_scheme: 100868      # HDFC Liquid Fund, Regular Plan, Growth; a cash check only
+
+sources:
+  mf_nav: "https://api.mfapi.in/mf/{code}"
+  iima_page: "https://faculty.iima.ac.in/~iffm/Indian-Fama-French-Momentum/"
+  rbi_wss_index: "https://www.rbi.org.in/Scripts/WSSViewDetail.aspx?TYPE=Section&PARAM1=4"
+  rbi_wss_page: "https://www.rbi.org.in/scripts/WSSView.aspx?Id={id}"
+  nifty50_list: "https://www.niftyindices.com/IndexConstituent/ind_nifty50list.csv"
+  nifty100_list: "https://www.niftyindices.com/IndexConstituent/ind_nifty100list.csv"
+
+quality:
+  max_missing_share: 0.02    # of trading days, per stock
+  jump_threshold: 0.15       # absolute daily stock move, net of the market, flagged for review
